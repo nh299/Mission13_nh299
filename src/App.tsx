@@ -1,24 +1,29 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TopBanner from './Meh';
+import MovieList from './pages/Movies';
+import NavBar from './Navbar';
+import MyPodcasts from './pages/MyPodcasts';
 
 function App() {
+  let component;
+  switch (window.location.pathname) {
+    case '/':
+      component = <TopBanner />;
+      break;
+    case '/blog':
+      component = <MyPodcasts />;
+      break;
+    case '/movieList':
+      component = <MovieList />;
+      break;
+  }
+  console.log(window.location);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      {component}
     </div>
   );
 }

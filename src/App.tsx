@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import TopBanner from './Meh';
-import MovieList from './pages/Movies';
+import MovieList from './movie/MovieList';
 import NavBar from './Navbar';
 import MyPodcasts from './pages/MyPodcasts';
 
